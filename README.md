@@ -1,5 +1,5 @@
 # promotion-point
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/65ab36c1-8e70-4e5c-b262-cc12a8e0cbef/deploy-status)](https://app.netlify.com/sites/loving-tesla-f38451/deploys)
 ## Project setup
 ```
 yarn install
