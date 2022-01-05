@@ -6,10 +6,16 @@ const routes = [
         path: '/',
         name: 'Home',
         component: Home
-    },{
+    },
+    {
         path: '/search',
         name: 'Search',
         component: () => import('../views/search/Search.vue')
+    },
+    {
+        path: '/markup',
+        name: 'Markup',
+        component: () => import('../views/markup/Markup.vue')
     },
     {
         path: '/scanner',
