@@ -4,6 +4,7 @@
     <SidebarLink to="/search" icon="fas fa-search">Search</SidebarLink>
     <SidebarLink to="/scanner" icon="fas fa-barcode">Scanner</SidebarLink>
     <SidebarLink to="/multiple" icon="fas fa-poll-h">Multiple A5</SidebarLink>
+    <SidebarLink to="/pdfkit" icon="fas fa-file-alt-h">Multiple A5 (WIP)</SidebarLink>
 
     <span
         class="collapse-icon"
