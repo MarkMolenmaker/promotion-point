@@ -12,6 +12,11 @@ const routes = [
         component: () => import('../views/search/Search.vue')
     },
     {
+        path: '/pdfkit',
+        name: 'PDFKit',
+        component: () => import('../views/pdfkit/PDFKit.vue')
+    },
+    {
         path: '/scanner',
         beforeEnter() { location.href = 'https://markmolenmaker.github.io/KaartjesLive/' }
     },
