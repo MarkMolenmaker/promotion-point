@@ -1,9 +1,14 @@
 <template>
   <div class="pdfkit">
     <A4CollectionPDF :data="live"/>
-    <textarea v-model="data" @keydown.ctrl.space.prevent="ctrlSpace" @keydown.ctrl.enter.prevent="ctrlEnter"></textarea>
+    <textarea v-model="data" @keydown.ctrl.space.prevent="ctrlSpace" @keydown.ctrl.enter.prevent="ctrlEnter" @keydown.shift.space.prevent="shiftSpace" @keydown.ctrl.delete.prevent="ctrlDelete"></textarea>
     <div></div>
-    <span>CTRL+Enter = Render PDF, CTRL+Space = Nieuwe regel</span>
+    <div class="list">
+      <span>CTRL+Enter = Render PDF</span>
+      <span>CTRL+Space = Nieuwe regel</span>
+      <span>CTRL+Delete = Regel verwijderen</span>
+      <span>SHIFT+Space = Regel kopiëren</span>
+    </div>
   </div>
 </template>
 
@@ -29,6 +34,16 @@ export default {
     },
     ctrlEnter() {
       this.live = this.data;
+    },
+    ctrlDelete() {
+      const temp = JSON.parse(this.data)
+      temp.pop()
+      this.data = JSON.stringify(temp, null, 2)
+    },
+    shiftSpace() {
+      const temp = JSON.parse(this.data)
+      temp.push(temp[temp.length - 1])
+      this.data = JSON.stringify(temp, null, 2)
     }
   }
 }
@@ -39,6 +54,10 @@ export default {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-column-gap: 1em;
+}
+.list {
+  display: flex;
+  flex-direction: column;
 }
 </style>
 
